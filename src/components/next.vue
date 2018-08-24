@@ -72,48 +72,54 @@
               </div>
           </div>
           <div class="container">
-                <div  class="container" v-if="toggleBike" v-for="(bb,key1) in bike" :key="key1">
-                        <div class="card mt-5">
-                            <div class="card-header bg-danger text-white">
-                                <h1 class="card-title">{{ bb.uname }}</h1>
-                            </div>
-                            <div class="card-body">
-                                 <h4>{{ bb.info }}</h4><hr>
-                                  <h4>{{ bb.select }}</h4>
-                            </div>
-                            <div class="card-footer">
-                             <button class="btn btn-danger" @click="remBike(key1)">Remove</button> 
-                             <button class="btn btn-danger"  data-toggle="modal" data-target="#edit" @click="editBike(key1)">Edit</button>  
-                            </div>
-                        </div>
-                    </div>
-                    <div  class="container" v-if="toggleCar" v-for="(bb,key2) in car" :key="key2">
-                        <div class="card mt-5">
-                            <div class="card-header bg-info text-white">
-                                <h1 class="card-title">{{ bb.uname }}</h1>
-                            </div>
-                            <div class="card-body">
-                                <h4>{{ bb.info }}</h4><hr>
-                                  <h4>{{ bb.select }}</h4>
-                            </div>
-                            <div class="card-footer">
-                             <button class="btn btn-danger" @click="remCar(key2)">Remove</button>
-                             <button class="btn btn-danger" data-toggle="modal" data-target="#edit" @click="editCar(key2)">Edit</button>  
+                    <div class="row">
+                        <div  class="col-lg-4" v-if="toggleBike" v-for="(bb,key1) in bike" :key="key1">
+                            <div class="card mt-5">
+                                <div class="card-header bg-secondary text-white">
+                                    <p class="card-title">{{ bb.uname }}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h4>{{ bb.info }}</h4><hr>
+                                    <h4>{{ bb.select }}</h4>
+                                </div>
+                                <div class="card-footer">
+                                <button class="btn btn-secondary" @click="remBike(key1)">Remove</button> 
+                                <button class="btn btn-secondary"  data-toggle="modal" data-target="#edit" @click="editBike(key1)">Edit</button>  
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div  class="container" v-if="toggleBus" v-for="(bb,key3) in bus" :key="key3">
-                        <div class="card mt-5">
-                            <div class="card-header bg-warning text-white">
-                                <h1 class="card-title">{{ bb.uname }}</h1>
+                    <div class="row">
+                        <div class="col-lg-4" v-if="toggleCar" v-for="(bb,key2) in car" :key="key2">
+                            <div class="card mt-5">
+                                <div class="card-header bg-info text-white">
+                                    <p class="card-title">{{ bb.uname }}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h4>{{ bb.info }}</h4><hr>
+                                    <h4>{{ bb.select }}</h4>
+                                </div>
+                                <div class="card-footer">
+                                <button class="btn btn-info" @click="remCar(key2)">Remove</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#edit" @click="editCar(key2)">Edit</button>  
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <h4>{{ bb.info }}</h4><hr>
-                                  <h4>{{ bb.select }}</h4>
-                            </div>
-                            <div class="card-footer">
-                              <button class="btn btn-danger" @click="remBus(key3)">Remove</button>
-                              <button class="btn btn-danger" data-toggle="modal" data-target="#edit" @click="editBus(key3)">Edit</button>  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div  class="col-lg-4" v-if="toggleBus" v-for="(bb,key3) in bus" :key="key3">
+                            <div class="card mt-5">
+                                <div class="card-header bg-dark text-white">
+                                    <p class="card-title">{{ bb.uname }}</p>
+                                </div>
+                                <div class="card-body">
+                                    <h4>{{ bb.info }}</h4><hr>
+                                    <h4>{{ bb.select }}</h4>
+                                </div>
+                                <div class="card-footer">
+                                <button class="btn btn-dark" @click="remBus(key3)">Remove</button>
+                                <button class="btn btn-dark" data-toggle="modal" data-target="#edit" @click="editBus(key3)">Edit</button>  
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -218,10 +224,11 @@
             .then((data)=>{
                 console.log(data)
             })
+              All();
             this.select=null;
             this.uname=null;
             this.info=null;
-           
+         
          console.log("done")
       }
     },
@@ -254,6 +261,11 @@
     border:1px solid white;
     color:white;
     
+  }
+  p{
+      font-family:"Playfair Display";
+      font-size:20px;
+      letter-spacing:3px;
   }
   .mkBtnDark{
     background:white;
