@@ -1,5 +1,4 @@
-
-  <template>
+ <template>
     <div class="hello">
 
         <hr>
@@ -129,6 +128,7 @@
     </div>
   </template>
   <script>
+  
   export default {
     name: 'HelloWorld',
     data () {
@@ -163,14 +163,12 @@
             this.editSelect= null;
             this.editInfo= null;
             this.editUname= null;
-
         },
         editBus(key3){
             this.editSelect= this.bus[key3].select;
             this.editInfo= this.bus[key3].info;
             this.editUname= this.bus[key3].uname;
             this.keyValue=key3;
-
         }, 
         changeBus(){
             this.toggleCar = false;
@@ -219,12 +217,12 @@
             this.toggleBus=true;
             this.toggleBike=true;
         },
-     addPost(){
+     addPost() {
             firebase.database().ref(this.select).push({uname: this.uname ,info : this.info , select: this.select})
             .then((data)=>{
                 console.log(data)
             })
-              All();
+              this.All();
             this.select=null;
             this.uname=null;
             this.info=null;
